@@ -1,0 +1,162 @@
+/* Dashboard.css - Updated */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.dashboard-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: all 0.4s ease;
+  border-top: 4px solid transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-card:nth-child(1) {
+  border-top-color: var(--primary);
+}
+
+.dashboard-card:nth-child(2) {
+  border-top-color: var(--secondary);
+}
+
+.dashboard-card:nth-child(3) {
+  border-top-color: var(--accent);
+}
+
+.dashboard-card:nth-child(4) {
+  border-top-color: #7209b7;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.dashboard-card svg {
+  font-size: 48px;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(67, 97, 238, 0.2) 100%);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-card:nth-child(1) svg {
+  color: var(--primary);
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(67, 97, 238, 0.2) 100%);
+}
+
+.dashboard-card:nth-child(2) svg {
+  color: var(--secondary);
+  background: linear-gradient(135deg, rgba(46, 196, 182, 0.1) 0%, rgba(46, 196, 182, 0.2) 100%);
+}
+
+.dashboard-card:nth-child(3) svg {
+  color: var(--accent);
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 107, 107, 0.2) 100%);
+}
+
+.dashboard-card:nth-child(4) svg {
+  color: #7209b7;
+  background: linear-gradient(135deg, rgba(114, 9, 183, 0.1) 0%, rgba(114, 9, 183, 0.2) 100%);
+}
+
+.dashboard-card h3 {
+  margin: 15px 0 10px;
+  font-size: 1.5rem;
+  color: var(--dark);
+}
+
+.dashboard-card p {
+  color: var(--text-light);
+  margin-bottom: 25px;
+  flex-grow: 1;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.dashboard-card button,
+.dashboard-card .workout-btn {
+  margin-top: auto;
+  min-width: 180px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:nth-child(1) button {
+  background: var(--gradient-primary);
+}
+
+.dashboard-card:nth-child(2) button {
+  background: var(--gradient-secondary);
+}
+
+.dashboard-card:nth-child(3) button {
+  background: var(--gradient-accent);
+}
+
+.dashboard-card:nth-child(4) button {
+  background: linear-gradient(135deg, #7209b7 0%, #560bad 100%);
+}
+
+.dashboard-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0.95;
+}
+
+/* Recent activity section */
+.recent-activity {
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.05) 0%, rgba(67, 97, 238, 0.1) 100%);
+  border-left: 4px solid var(--primary);
+}
+
+.recent-activity h3 {
+  color: var(--primary);
+}
+
+/* Upcoming goals section */
+.upcoming-goals {
+  background: linear-gradient(135deg, rgba(46, 196, 182, 0.05) 0%, rgba(46, 196, 182, 0.1) 100%);
+  border-left: 4px solid var(--secondary);
+}
+
+.upcoming-goals h3 {
+  color: var(--secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .dashboard-card {
+    padding: 25px;
+  }
+  
+  .dashboard-card svg {
+    width: 70px;
+    height: 70px;
+    font-size: 36px;
+  }
+}

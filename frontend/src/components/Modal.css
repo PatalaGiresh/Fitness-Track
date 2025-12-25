@@ -1,0 +1,248 @@
+/* Modal.css - Updated */
+.workout-history {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.workout-history h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--dark);
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.workout-history h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.workout-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+.workout-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 25px;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.workout-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--gradient-primary);
+}
+
+.workout-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.workout-details {
+  flex: 1;
+}
+
+.workout-details p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.workout-details strong {
+  font-weight: 600;
+  color: var(--primary);
+  min-width: 80px;
+  display: inline-block;
+}
+
+.workout-card .icon {
+  margin-right: 8px;
+  color: var(--primary);
+  font-size: 16px;
+}
+
+.workout-date {
+  color: var(--text-light) !important;
+  font-size: 14px !important;
+  background: rgba(67, 97, 238, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 10px !important;
+}
+
+.delete-button {
+  background: var(--gradient-accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  margin-left: 20px;
+}
+
+.delete-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+  opacity: 0.9;
+}
+
+.error {
+  color: var(--accent);
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--accent);
+}
+
+/* Modal overlay for confirm delete */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 26, 46, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: var(--shadow-lg);
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-content h3 {
+  color: var(--dark);
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.modal-content p {
+  color: var(--text-light);
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+.confirm-button {
+  background: var(--gradient-accent);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cancel-button {
+  background: var(--light-bg);
+  color: var(--text);
+  padding: 12px 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.confirm-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.cancel-button:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .workout-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .workout-card {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+  }
+  
+  .delete-button {
+    margin-left: 0;
+    margin-top: 20px;
+    align-self: flex-end;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+  
+  .confirm-button,
+  .cancel-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+

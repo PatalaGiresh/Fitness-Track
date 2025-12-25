@@ -1,0 +1,108 @@
+/* Workouts.css - Button Styles */
+
+/* Action buttons container */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Base action button styles */
+.action-btn {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50% !important;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  border: none !important;
+}
+
+/* Plus (+) button - Pure white in light mode */
+.action-btn.btn-outline-primary {
+  background: white !important;
+  color: var(--primary) !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--primary) !important;
+}
+
+.action-btn.btn-outline-primary:hover {
+  background: var(--primary) !important;
+  color: white !important;
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+}
+
+/* Minus (-) button */
+.action-btn.btn-outline-danger {
+  background: var(--accent) !important;
+  color: white !important;
+  box-shadow: 0 3px 8px rgba(255, 107, 107, 0.3);
+}
+
+.action-btn.btn-outline-danger:hover {
+  background: #ff5252 !important;
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Icons */
+.action-btn svg {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Dark mode */
+[data-theme="dark"] .action-btn.btn-outline-primary {
+  background: var(--primary) !important;
+  color: white !important;
+  box-shadow: 0 3px 8px rgba(59, 130, 246, 0.4);
+  border: none !important;
+}
+
+[data-theme="dark"] .action-btn.btn-outline-primary:hover {
+  background: #2563eb !important;
+}
+
+[data-theme="dark"] .action-btn.btn-outline-danger {
+  background: #ef4444 !important;
+  color: white !important;
+  box-shadow: 0 3px 8px rgba(239, 68, 68, 0.4);
+}
+
+[data-theme="dark"] .action-btn.btn-outline-danger:hover {
+  background: #dc2626 !important;
+}
+
+/* Table adjustments */
+.workout-table td {
+  vertical-align: middle;
+  padding: 12px 8px !important;
+}
+
+.workout-table th:nth-child(5),
+.workout-table td:nth-child(5) {
+  min-width: 120px;
+  width: 120px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .action-btn {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .action-btn svg {
+    font-size: 16px;
+  }
+  
+  .workout-table th:nth-child(5),
+  .workout-table td:nth-child(5) {
+    min-width: 100px;
+    width: 100px;
+  }
+}

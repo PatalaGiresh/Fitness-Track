@@ -1,0 +1,164 @@
+/* Navbar.css - Updated */
+.navbar-custom {
+  background: var(--gradient-dark) !important;
+  color: white;
+  padding: 0.5rem 1rem;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  min-height: 70px;
+}
+
+.navbar-brand-center {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  text-align: center;
+  margin: 0 !important;
+}
+
+.navbar-brand-center span {
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Back button styles */
+.back-button {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 50% !important;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: var(--secondary) !important;
+  transform: translateX(-2px);
+}
+
+/* Theme toggle button */
+.theme-toggle-btn {
+  background: transparent !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--secondary) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: rotate(15deg);
+}
+
+.dark-mode-icon {
+  font-size: 20px;
+  transition: transform 0.5s ease;
+}
+
+.theme-toggle-btn:hover .dark-mode-icon {
+  transform: rotate(180deg);
+}
+
+/* Profile button */
+.profile-btn {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 20px !important;
+  padding: 8px 16px !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.profile-btn:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: var(--secondary) !important;
+  transform: translateY(-1px);
+}
+
+/* Logout button */
+.btn-outline-danger {
+  border-radius: 20px !important;
+  border-width: 2px !important;
+  padding: 8px 20px !important;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+/* Modal customization */
+.modal-header-custom {
+  background: var(--gradient-dark) !important;
+  color: white !important;
+  border-radius: 0.3rem 0.3rem 0 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .navbar-brand-center {
+    position: relative !important;
+    left: 0 !important;
+    transform: none !important;
+    text-align: left;
+    margin-left: 10px !important;
+  }
+  
+  .navbar-custom {
+    padding: 0.5rem;
+  }
+  
+  .back-button {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+  }
+  
+  .navbar-collapse {
+    margin-top: 10px;
+    padding: 20px;
+    background: var(--dark-secondary);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .theme-toggle-btn,
+  .profile-btn,
+  .btn-outline-danger {
+    margin: 5px 0;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand-center span {
+    font-size: 1.5rem;
+  }
+  
+  .navbar-custom {
+    min-height: 60px;
+  }
+}

@@ -1,0 +1,210 @@
+/* WorkoutHistory.css - Updated for Light & Dark Mode */
+.workout-history {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.workout-history h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+  position: relative;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.workout-history h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.workout-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.workout-table th {
+  background: var(--gradient-primary);
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  border: none;
+}
+
+.workout-table td {
+  padding: 1rem;
+  text-align: center;
+  color: var(--text);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+.workout-table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.workout-table tr:hover {
+  background-color: rgba(67, 97, 238, 0.05);
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 36px;
+  height: 36px;
+}
+
+.delete-button:hover {
+  color: white;
+  background: var(--gradient-accent);
+  transform: scale(1.1);
+}
+
+.error {
+  color: var(--accent);
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--accent);
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+/* Dark Mode Specific Styles */
+[data-theme="dark"] .workout-table {
+  background: var(--dark-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .workout-history h2 {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .workout-table th {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .workout-table td {
+  color: #e2e8f0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .workout-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="dark"] .workout-table tr:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+[data-theme="dark"] .delete-button {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
+}
+
+[data-theme="dark"] .delete-button:hover {
+  color: white;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+[data-theme="dark"] .error {
+  color: #fca5a5;
+  background: rgba(239, 68, 68, 0.15);
+  border-left: 4px solid #ef4444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .workout-history {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+  
+  .workout-history h2 {
+    font-size: 1.8rem;
+  }
+  
+  .workout-table {
+    font-size: 14px;
+  }
+  
+  .workout-table th,
+  .workout-table td {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .delete-button {
+    width: 32px;
+    height: 32px;
+    font-size: 1em;
+  }
+}
+
+/* Empty state styling */
+.workout-history .empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-light);
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  margin: 2rem auto;
+  border: 2px dashed rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .workout-history .empty-state {
+  color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Date column styling */
+.workout-table td:nth-child(1) {
+  font-weight: 500;
+  color: var(--primary);
+}
+
+[data-theme="dark"] .workout-table td:nth-child(1) {
+  color: #60a5fa;
+}
+
+/* Exercise column styling */
+.workout-table td:nth-child(2) {
+  font-weight: 600;
+  color: var(--text);
+}
+
+[data-theme="dark"] .workout-table td:nth-child(2) {
+  color: #f1f5f9;
+}
