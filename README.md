@@ -27,7 +27,7 @@ FitnessTrack is a full-stack fitness tracking application designed to help users
 ## Deployment:
 - **Frontend**: Deployed on Render.
 - **Backend**: Deployed on Render.
-- **Database**: Hosted on MongoDB Atlas.
+- **Database**: Hosted on MongoDB Compass
 
  Access the Application
 Open your browser and go to https://fitnesstrackapp-frontend.onrender.com
